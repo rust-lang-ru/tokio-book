@@ -88,7 +88,7 @@ async fn main() {
 
 Here we've created a TcpListener that can listen for incoming TCP connections. On the
 listener we call `incoming` which turns the listener into a `Stream` of inbound client
-connections. We then call `for_each` which will yield each inbound client connection.
+connections. We then call `next` in a while loop, which will yield each inbound client connection.
 For now we're not doing anything with this inbound connection - that's our next step.
 
 Once we have our server, we `.await` on it. Up until this point our
